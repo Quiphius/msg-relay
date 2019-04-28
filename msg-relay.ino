@@ -23,6 +23,95 @@ bool relayActive[] = { false, false, false, false };
 unsigned long relayLast[] = { 0, 0, 0, 0 };
 unsigned long triggedTime, now;
 
+void print_status() {
+  int d, r, diff;
+
+  triggerReset = 0;
+
+  display.clearDisplay();
+  display.setCursor(0, 0);
+
+  for (int i = 0; i < RELAYS; i++) {
+    r = relayTimes[i] % 10;
+    d = relayTimes[i] / 10;
+    display.print("T");
+    display.print(i + 1);
+    display.print(": ");
+    if (relayTimes[i]) {
+      display.print(d);
+      display.print(".");
+      display.print(r);
+      display.println("s");
+    } else {
+      display.println("-");
+    }
+
+    if (triggerReset < relayTimes[i]) {
+      triggerReset = relayTimes[i];
+    }
+  }
+  triggerReset += 15;
+  Serial.println(triggerReset);
+
+  for (int i = 1; i < RELAYS; i++) {
+    display.print("D");
+    display.print(i);
+    display.print(": ");
+    if (relayTimes[i - 1] && relayTimes[i]) {
+      diff = relayTimes[i] - relayTimes[i - 1];
+      r = diff % 10;
+      d = diff / 10;
+      display.print(d);
+      display.print(".");
+      display.print(r);
+      display.println("s");
+    } else {
+      display.println("-");
+    }
+  }
+
+  display.display();
+}
+
+void handleSerial() {
+  const int BUFF_SIZE = 16;
+  static char buffer[BUFF_SIZE + 1];
+  static int length = 0;
+
+  if (Serial.available()) {
+    char c = Serial.read();
+    if ((c == '\r') || (c == '\n')) {
+      if (length > 0) {
+        handleReceivedMessage(buffer);
+      }
+      length = 0;
+    } else {
+      if (length < BUFF_SIZE) {
+        buffer[length++] = c;
+        buffer[length] = 0;
+      }
+    }
+  }
+}
+
+void handleReceivedMessage(char *cmd) {
+  int pos = 0, value;
+  int i, c;
+
+  c = cmd[pos++];
+  if (c == 't' || c == 'd') {
+    i = atoi(cmd + (pos++));
+    if (cmd[pos++] == ' ') {
+      value = atoi(cmd + pos);
+    }
+    if (c == 't') {
+      relayTimes[i - 1] = value;
+    } else {
+      relayTimes[i] = relayTimes[i - 1] + value;
+    }
+    print_status();
+  }
+}
 
 void setup() {
   Serial.begin(9600);
@@ -33,17 +122,13 @@ void setup() {
 
   for (int i = 0; i < RELAYS; i++) {
     pinMode(RELAY_PIN + i, OUTPUT);
-    if (triggerReset < relayTimes[i] + 11) {
-      triggerReset = relayTimes[i] + 11;
-    }
   }
-  /*
-    display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3D (for the 128x64)
-    display.setRotation(0);
-    display.setTextSize(0);
-    display.setTextColor(WHITE);
-    display.clearDisplay();
-  */
+
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+  display.setRotation(0);
+  display.setTextSize(0);
+  display.setTextColor(WHITE);
+  print_status();
 }
 
 void loop() {
@@ -82,45 +167,6 @@ void loop() {
       triggered = false;
     }
   }
+  handleSerial();
   delay(100);
 }
-
-/*
-  void handleSerial()
-  {
-    const int BUFF_SIZE = 32; // make it big enough to hold your longest command
-    static char buffer[BUFF_SIZE+1]; // +1 allows space for the null terminator
-    static int length = 0; // number of characters currently in the buffer
-
-    if(Serial.available())
-    {
-        char c = Serial.read();
-        if((c == '\r') || (c == '\n'))
-        {
-            // end-of-line received
-            if(length > 0)
-            {
-                handleReceivedMessage(buffer);
-            }
-            length = 0;
-        }
-        else
-        {
-            if(length < BUFF_SIZE)
-            {
-                buffer[length++] = c; // append the received character to the array
-                buffer[length] = 0; // append the null terminator
-            }
-            else
-            {
-                // buffer full - discard the received character
-            }
-        }
-    }
-  }
-
-  void handleReceivedMessage(char *msg)
-  {
-    ...
-  }
-*/
