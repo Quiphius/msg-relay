@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
+Sheet 1 5
 Title ""
 Date ""
 Rev ""
@@ -23,17 +23,6 @@ F 1 "Arduino_Nano_v3.x" H 4400 2470 50  0000 C CNN
 F 2 "Module:Arduino_Nano" H 4550 2700 50  0001 L CNN
 F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 4400 2650 50  0001 C CNN
 	1    4400 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Relay:SANYOU_SRD_Form_C K1
-U 1 1 5CC35D85
-P 7500 1100
-F 0 "K1" H 7930 1146 50  0000 L CNN
-F 1 "SANYOU_SRD_Form_C" H 7930 1055 50  0000 L CNN
-F 2 "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C" H 7950 1050 50  0001 L CNN
-F 3 "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf" H 7500 1100 50  0001 C CNN
-	1    7500 1100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -134,25 +123,6 @@ Wire Wire Line
 Wire Wire Line
 	3700 4150 3900 4150
 $Comp
-L power:GND #PWR07
-U 1 1 5CCAF33E
-P 7300 2000
-F 0 "#PWR07" H 7300 1750 50  0001 C CNN
-F 1 "GND" H 7305 1827 50  0000 C CNN
-F 2 "" H 7300 2000 50  0001 C CNN
-F 3 "" H 7300 2000 50  0001 C CNN
-	1    7300 2000
-	1    0    0    -1  
-$EndComp
-Text GLabel 6500 1700 0    50   Input ~ 0
-RELAY1
-Text GLabel 6900 3200 0    50   Input ~ 0
-RELAY2
-Text GLabel 6500 4750 0    50   Input ~ 0
-RELAY3
-Text GLabel 6850 6200 0    50   Input ~ 0
-RELAY4
-$Comp
 L power:+5V #PWR05
 U 1 1 5CCDB4EB
 P 4600 2600
@@ -184,382 +154,6 @@ F 3 "" H 4300 2600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4300 2600 4300 2650
-$Comp
-L Transistor_BJT:BC847 Q1
-U 1 1 5CCB178F
-P 7200 1700
-F 0 "Q1" H 7391 1746 50  0000 L CNN
-F 1 "BC847" H 7391 1655 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7400 1625 50  0001 L CIN
-F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657" H 7200 1700 50  0001 L CNN
-	1    7200 1700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Diode:1N4007 D1
-U 1 1 5CCBA4DF
-P 6800 1100
-F 0 "D1" H 6800 1316 50  0000 C CNN
-F 1 "1N4007" H 6800 1225 50  0000 C CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 6800 925 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 6800 1100 50  0001 C CNN
-	1    6800 1100
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7300 1400 7300 1450
-Wire Wire Line
-	6800 1250 6800 1450
-Wire Wire Line
-	6800 1450 7300 1450
-Connection ~ 7300 1450
-Wire Wire Line
-	7300 1450 7300 1500
-Wire Wire Line
-	7300 800  6800 800 
-Wire Wire Line
-	6800 800  6800 950 
-$Comp
-L power:+5V #PWR06
-U 1 1 5CCC0BDE
-P 7300 700
-F 0 "#PWR06" H 7300 550 50  0001 C CNN
-F 1 "+5V" H 7315 873 50  0000 C CNN
-F 2 "" H 7300 700 50  0001 C CNN
-F 3 "" H 7300 700 50  0001 C CNN
-	1    7300 700 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7300 700  7300 800 
-Connection ~ 7300 800 
-Wire Wire Line
-	7300 1900 7300 2000
-$Comp
-L Device:R R1
-U 1 1 5CCC3F08
-P 6750 1700
-F 0 "R1" V 6650 1700 50  0000 C CNN
-F 1 "R" V 6750 1700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6680 1700 50  0001 C CNN
-F 3 "~" H 6750 1700 50  0001 C CNN
-	1    6750 1700
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6500 1700 6600 1700
-Wire Wire Line
-	6900 1700 7000 1700
-$Comp
-L Connector:Conn_01x03_Male J2
-U 1 1 5CCC799B
-P 9150 1150
-F 0 "J2" H 9122 1082 50  0000 R CNN
-F 1 "Conn_01x03_Male" H 9122 1173 50  0000 R CNN
-F 2 "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_3-G-5.08_1x03_P5.08mm_Vertical" H 9150 1150 50  0001 C CNN
-F 3 "~" H 9150 1150 50  0001 C CNN
-	1    9150 1150
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	7600 750  7600 800 
-$Comp
-L Relay:SANYOU_SRD_Form_C K4
-U 1 1 5CCE197B
-P 7900 2600
-F 0 "K4" H 8330 2646 50  0000 L CNN
-F 1 "SANYOU_SRD_Form_C" H 8330 2555 50  0000 L CNN
-F 2 "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C" H 8350 2550 50  0001 L CNN
-F 3 "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf" H 7900 2600 50  0001 C CNN
-	1    7900 2600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR013
-U 1 1 5CCE1981
-P 7700 3500
-F 0 "#PWR013" H 7700 3250 50  0001 C CNN
-F 1 "GND" H 7705 3327 50  0000 C CNN
-F 2 "" H 7700 3500 50  0001 C CNN
-F 3 "" H 7700 3500 50  0001 C CNN
-	1    7700 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_BJT:BC847 Q4
-U 1 1 5CCE1987
-P 7600 3200
-F 0 "Q4" H 7791 3246 50  0000 L CNN
-F 1 "BC847" H 7791 3155 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7800 3125 50  0001 L CIN
-F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657" H 7600 3200 50  0001 L CNN
-	1    7600 3200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Diode:1N4007 D4
-U 1 1 5CCE198D
-P 7200 2600
-F 0 "D4" H 7200 2816 50  0000 C CNN
-F 1 "1N4007" H 7200 2725 50  0000 C CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 7200 2425 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7200 2600 50  0001 C CNN
-	1    7200 2600
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7700 2900 7700 2950
-Wire Wire Line
-	7200 2750 7200 2950
-Wire Wire Line
-	7200 2950 7700 2950
-Connection ~ 7700 2950
-Wire Wire Line
-	7700 2950 7700 3000
-Wire Wire Line
-	7700 2300 7200 2300
-Wire Wire Line
-	7200 2300 7200 2450
-$Comp
-L power:+5V #PWR012
-U 1 1 5CCE199A
-P 7700 2200
-F 0 "#PWR012" H 7700 2050 50  0001 C CNN
-F 1 "+5V" H 7715 2373 50  0000 C CNN
-F 2 "" H 7700 2200 50  0001 C CNN
-F 3 "" H 7700 2200 50  0001 C CNN
-	1    7700 2200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7700 2200 7700 2300
-Connection ~ 7700 2300
-Wire Wire Line
-	7700 3400 7700 3500
-$Comp
-L Device:R R4
-U 1 1 5CCE19A3
-P 7150 3200
-F 0 "R4" V 7050 3200 50  0000 C CNN
-F 1 "R" V 7150 3200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7080 3200 50  0001 C CNN
-F 3 "~" H 7150 3200 50  0001 C CNN
-	1    7150 3200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6900 3200 7000 3200
-Wire Wire Line
-	7300 3200 7400 3200
-$Comp
-L Connector:Conn_01x03_Male J5
-U 1 1 5CCE19AB
-P 9550 2650
-F 0 "J5" H 9522 2582 50  0000 R CNN
-F 1 "Conn_01x03_Male" H 9522 2673 50  0000 R CNN
-F 2 "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_3-G-5.08_1x03_P5.08mm_Vertical" H 9550 2650 50  0001 C CNN
-F 3 "~" H 9550 2650 50  0001 C CNN
-	1    9550 2650
-	-1   0    0    1   
-$EndComp
-$Comp
-L Relay:SANYOU_SRD_Form_C K2
-U 1 1 5CD0D35D
-P 7500 4150
-F 0 "K2" H 7930 4196 50  0000 L CNN
-F 1 "SANYOU_SRD_Form_C" H 7930 4105 50  0000 L CNN
-F 2 "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C" H 7950 4100 50  0001 L CNN
-F 3 "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf" H 7500 4150 50  0001 C CNN
-	1    7500 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR09
-U 1 1 5CD0D363
-P 7300 5050
-F 0 "#PWR09" H 7300 4800 50  0001 C CNN
-F 1 "GND" H 7305 4877 50  0000 C CNN
-F 2 "" H 7300 5050 50  0001 C CNN
-F 3 "" H 7300 5050 50  0001 C CNN
-	1    7300 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_BJT:BC847 Q2
-U 1 1 5CD0D369
-P 7200 4750
-F 0 "Q2" H 7391 4796 50  0000 L CNN
-F 1 "BC847" H 7391 4705 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7400 4675 50  0001 L CIN
-F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657" H 7200 4750 50  0001 L CNN
-	1    7200 4750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Diode:1N4007 D2
-U 1 1 5CD0D36F
-P 6800 4150
-F 0 "D2" H 6800 4366 50  0000 C CNN
-F 1 "1N4007" H 6800 4275 50  0000 C CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 6800 3975 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 6800 4150 50  0001 C CNN
-	1    6800 4150
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7300 4450 7300 4500
-Wire Wire Line
-	6800 4300 6800 4500
-Wire Wire Line
-	6800 4500 7300 4500
-Connection ~ 7300 4500
-Wire Wire Line
-	7300 4500 7300 4550
-Wire Wire Line
-	7300 3850 6800 3850
-Wire Wire Line
-	6800 3850 6800 4000
-$Comp
-L power:+5V #PWR08
-U 1 1 5CD0D37C
-P 7300 3750
-F 0 "#PWR08" H 7300 3600 50  0001 C CNN
-F 1 "+5V" H 7315 3923 50  0000 C CNN
-F 2 "" H 7300 3750 50  0001 C CNN
-F 3 "" H 7300 3750 50  0001 C CNN
-	1    7300 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7300 3750 7300 3850
-Connection ~ 7300 3850
-Wire Wire Line
-	7300 4950 7300 5050
-$Comp
-L Device:R R2
-U 1 1 5CD0D385
-P 6750 4750
-F 0 "R2" V 6650 4750 50  0000 C CNN
-F 1 "R" V 6750 4750 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 6680 4750 50  0001 C CNN
-F 3 "~" H 6750 4750 50  0001 C CNN
-	1    6750 4750
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6500 4750 6600 4750
-Wire Wire Line
-	6900 4750 7000 4750
-$Comp
-L Connector:Conn_01x03_Male J3
-U 1 1 5CD0D38D
-P 9150 4200
-F 0 "J3" H 9122 4132 50  0000 R CNN
-F 1 "Conn_01x03_Male" H 9122 4223 50  0000 R CNN
-F 2 "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_3-G-5.08_1x03_P5.08mm_Vertical" H 9150 4200 50  0001 C CNN
-F 3 "~" H 9150 4200 50  0001 C CNN
-	1    9150 4200
-	-1   0    0    1   
-$EndComp
-$Comp
-L Relay:SANYOU_SRD_Form_C K3
-U 1 1 5CD17DEA
-P 7850 5600
-F 0 "K3" H 8280 5646 50  0000 L CNN
-F 1 "SANYOU_SRD_Form_C" H 8280 5555 50  0000 L CNN
-F 2 "Relay_THT:Relay_SPDT_SANYOU_SRD_Series_Form_C" H 8300 5550 50  0001 L CNN
-F 3 "http://www.sanyourelay.ca/public/products/pdf/SRD.pdf" H 7850 5600 50  0001 C CNN
-	1    7850 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR011
-U 1 1 5CD17DF0
-P 7650 6500
-F 0 "#PWR011" H 7650 6250 50  0001 C CNN
-F 1 "GND" H 7655 6327 50  0000 C CNN
-F 2 "" H 7650 6500 50  0001 C CNN
-F 3 "" H 7650 6500 50  0001 C CNN
-	1    7650 6500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Transistor_BJT:BC847 Q3
-U 1 1 5CD17DF6
-P 7550 6200
-F 0 "Q3" H 7741 6246 50  0000 L CNN
-F 1 "BC847" H 7741 6155 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 7750 6125 50  0001 L CIN
-F 3 "http://www.infineon.com/dgdl/Infineon-BC847SERIES_BC848SERIES_BC849SERIES_BC850SERIES-DS-v01_01-en.pdf?fileId=db3a304314dca389011541d4630a1657" H 7550 6200 50  0001 L CNN
-	1    7550 6200
-	1    0    0    -1  
-$EndComp
-$Comp
-L Diode:1N4007 D3
-U 1 1 5CD17DFC
-P 7150 5600
-F 0 "D3" H 7150 5816 50  0000 C CNN
-F 1 "1N4007" H 7150 5725 50  0000 C CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 7150 5425 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7150 5600 50  0001 C CNN
-	1    7150 5600
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7650 5900 7650 5950
-Wire Wire Line
-	7150 5750 7150 5950
-Wire Wire Line
-	7150 5950 7650 5950
-Connection ~ 7650 5950
-Wire Wire Line
-	7650 5950 7650 6000
-Wire Wire Line
-	7650 5300 7150 5300
-Wire Wire Line
-	7150 5300 7150 5450
-$Comp
-L power:+5V #PWR010
-U 1 1 5CD17E09
-P 7650 5200
-F 0 "#PWR010" H 7650 5050 50  0001 C CNN
-F 1 "+5V" H 7665 5373 50  0000 C CNN
-F 2 "" H 7650 5200 50  0001 C CNN
-F 3 "" H 7650 5200 50  0001 C CNN
-	1    7650 5200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7650 5200 7650 5300
-Connection ~ 7650 5300
-Wire Wire Line
-	7650 6400 7650 6500
-$Comp
-L Device:R R3
-U 1 1 5CD17E12
-P 7100 6200
-F 0 "R3" V 7000 6200 50  0000 C CNN
-F 1 "R" V 7100 6200 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 7030 6200 50  0001 C CNN
-F 3 "~" H 7100 6200 50  0001 C CNN
-	1    7100 6200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6850 6200 6950 6200
-Wire Wire Line
-	7250 6200 7350 6200
-$Comp
-L Connector:Conn_01x03_Male J4
-U 1 1 5CD17E1A
-P 9500 5650
-F 0 "J4" H 9472 5582 50  0000 R CNN
-F 1 "Conn_01x03_Male" H 9472 5673 50  0000 R CNN
-F 2 "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_3-G-5.08_1x03_P5.08mm_Vertical" H 9500 5650 50  0001 C CNN
-F 3 "~" H 9500 5650 50  0001 C CNN
-	1    9500 5650
-	-1   0    0    1   
-$EndComp
 NoConn ~ 3900 3250
 NoConn ~ 3900 3350
 NoConn ~ 3900 3450
@@ -576,90 +170,48 @@ NoConn ~ 4900 4050
 NoConn ~ 4900 3950
 NoConn ~ 4900 3850
 NoConn ~ 4900 3750
+$Sheet
+S 6050 2450 500  150 
+U 5CDB5718
+F0 "Relay 1" 50
+F1 "relay.sch" 50
+F2 "In" I L 6050 2500 50 
+$EndSheet
+Text GLabel 5950 2500 0    50   Input ~ 0
+RELAY1
 Wire Wire Line
-	7700 1400 7700 1450
+	5950 2500 6050 2500
+$Sheet
+S 6050 2850 500  150 
+U 5CDBF4F7
+F0 "Relay 2" 50
+F1 "relay.sch" 50
+F2 "In" I L 6050 2900 50 
+$EndSheet
+Text GLabel 5950 2900 0    50   Input ~ 0
+RELAY2
 Wire Wire Line
-	7700 1450 8750 1450
+	5950 2900 6050 2900
+$Sheet
+S 6050 3250 500  150 
+U 5CDCF528
+F0 "Relay 3" 50
+F1 "relay.sch" 50
+F2 "In" I L 6050 3300 50 
+$EndSheet
+Text GLabel 5950 3300 0    50   Input ~ 0
+RELAY3
 Wire Wire Line
-	8750 1450 8750 1150
+	5950 3300 6050 3300
+$Sheet
+S 6050 3650 500  150 
+U 5CDD051B
+F0 "Relay 4" 50
+F1 "relay.sch" 50
+F2 "In" I L 6050 3700 50 
+$EndSheet
+Text GLabel 5950 3700 0    50   Input ~ 0
+RELAY4
 Wire Wire Line
-	8750 1150 8950 1150
-Wire Wire Line
-	7800 800  8900 800 
-Wire Wire Line
-	8900 800  8900 1050
-Wire Wire Line
-	8900 1050 8950 1050
-Wire Wire Line
-	7600 750  8850 750 
-Wire Wire Line
-	8850 750  8850 1250
-Wire Wire Line
-	8850 1250 8950 1250
-Wire Wire Line
-	8100 2900 8100 2950
-Wire Wire Line
-	8100 2950 9150 2950
-Wire Wire Line
-	9150 2950 9150 2650
-Wire Wire Line
-	9150 2650 9350 2650
-Wire Wire Line
-	8200 2300 9300 2300
-Wire Wire Line
-	9300 2300 9300 2550
-Wire Wire Line
-	9300 2550 9350 2550
-Wire Wire Line
-	9350 2750 9250 2750
-Wire Wire Line
-	9250 2750 9250 2200
-Wire Wire Line
-	9250 2200 8000 2200
-Wire Wire Line
-	8000 2200 8000 2300
-Wire Wire Line
-	7700 4450 7700 4500
-Wire Wire Line
-	7700 4500 8750 4500
-Wire Wire Line
-	8750 4500 8750 4200
-Wire Wire Line
-	8750 4200 8950 4200
-Wire Wire Line
-	8950 4300 8800 4300
-Wire Wire Line
-	8800 4300 8800 3750
-Wire Wire Line
-	8800 3750 7600 3750
-Wire Wire Line
-	7600 3750 7600 3850
-Wire Wire Line
-	7800 3850 8900 3850
-Wire Wire Line
-	8900 3850 8900 4100
-Wire Wire Line
-	8900 4100 8950 4100
-Wire Wire Line
-	8050 5900 8050 5950
-Wire Wire Line
-	8050 5950 9100 5950
-Wire Wire Line
-	9100 5950 9100 5650
-Wire Wire Line
-	9100 5650 9300 5650
-Wire Wire Line
-	9300 5750 9150 5750
-Wire Wire Line
-	9150 5750 9150 5200
-Wire Wire Line
-	9150 5200 7950 5200
-Wire Wire Line
-	7950 5200 7950 5300
-Wire Wire Line
-	8150 5300 9200 5300
-Wire Wire Line
-	9200 5300 9200 5550
-Wire Wire Line
-	9200 5550 9300 5550
+	5950 3700 6050 3700
 $EndSCHEMATC
