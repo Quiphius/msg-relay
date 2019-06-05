@@ -4,7 +4,7 @@ EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 7
 Title ""
 Date ""
 Rev ""
@@ -14,17 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L MCU_Module:Arduino_Nano_v3.x A1
-U 1 1 5CC346B9
-P 4400 3650
-F 0 "A1" H 4400 2561 50  0000 C CNN
-F 1 "Arduino_Nano_v3.x" H 4400 2470 50  0000 C CNN
-F 2 "Module:Arduino_Nano" H 4550 2700 50  0001 L CNN
-F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 4400 2650 50  0001 C CNN
-	1    4400 3650
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:Screw_Terminal_01x02 J1
 U 1 1 5CC4B18F
@@ -154,8 +143,6 @@ F 3 "" H 4300 2600 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4300 2600 4300 2650
-NoConn ~ 3900 3250
-NoConn ~ 3900 3350
 NoConn ~ 3900 3450
 NoConn ~ 3900 3550
 NoConn ~ 3900 3650
@@ -214,4 +201,70 @@ Text GLabel 5950 3700 0    50   Input ~ 0
 RELAY4
 Wire Wire Line
 	5950 3700 6050 3700
+$Comp
+L Connector:Screw_Terminal_01x02 J6
+U 1 1 5CF7D51B
+P 1150 4550
+F 0 "J6" H 1068 4225 50  0000 C CNN
+F 1 "Screw_Terminal_01x02" H 1068 4316 50  0000 C CNN
+F 2 "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_2-G-5.08_1x02_P5.08mm_Vertical" H 1150 4550 50  0001 C CNN
+F 3 "~" H 1150 4550 50  0001 C CNN
+	1    1150 4550
+	-1   0    0    1   
+$EndComp
+Text GLabel 1400 4450 2    50   Input ~ 0
+INPUT1
+Text GLabel 1400 4550 2    50   Input ~ 0
+INPUT2
+Wire Wire Line
+	1350 4450 1400 4450
+Wire Wire Line
+	1350 4550 1400 4550
+$Comp
+L MCU_Module:Arduino_Nano_v3.x A1
+U 1 1 5CC346B9
+P 4400 3650
+F 0 "A1" H 4400 2561 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 4400 2470 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 4550 2700 50  0001 L CNN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 4400 2650 50  0001 C CNN
+	1    4400 3650
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 2700 2800 500  150 
+U 5CF8395A
+F0 "Input1" 50
+F1 "input.sch" 50
+F2 "IN" I L 2700 2850 50 
+F3 "OUT" I R 3200 2850 50 
+$EndSheet
+$Sheet
+S 2700 3200 500  150 
+U 5CF83BCA
+F0 "Input2" 50
+F1 "input.sch" 50
+F2 "IN" I L 2700 3250 50 
+F3 "OUT" I R 3200 3250 50 
+$EndSheet
+Wire Wire Line
+	3200 2850 3550 2850
+Wire Wire Line
+	3550 2850 3550 3250
+Wire Wire Line
+	3550 3250 3900 3250
+Wire Wire Line
+	3200 3250 3350 3250
+Wire Wire Line
+	3350 3250 3350 3350
+Wire Wire Line
+	3350 3350 3900 3350
+Text GLabel 2600 2850 0    50   Input ~ 0
+INPUT1
+Text GLabel 2600 3250 0    50   Input ~ 0
+INPUT2
+Wire Wire Line
+	2600 3250 2700 3250
+Wire Wire Line
+	2600 2850 2700 2850
 $EndSCHEMATC

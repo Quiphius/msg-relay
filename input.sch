@@ -1,0 +1,101 @@
+EESchema Schematic File Version 4
+LIBS:msg-relay-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 7 7
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:D D5
+U 1 1 5CF808A4
+P 4150 2350
+AR Path="/5CF8395A/5CF808A4" Ref="D5"  Part="1" 
+AR Path="/5CF83BCA/5CF808A4" Ref="D7"  Part="1" 
+F 0 "D7" V 4104 2429 50  0000 L CNN
+F 1 "D" V 4195 2429 50  0000 L CNN
+F 2 "Diode_SMD:D_0603_1608Metric" H 4150 2350 50  0001 C CNN
+F 3 "~" H 4150 2350 50  0001 C CNN
+	1    4150 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D D6
+U 1 1 5CF80D2F
+P 4150 2850
+AR Path="/5CF8395A/5CF80D2F" Ref="D6"  Part="1" 
+AR Path="/5CF83BCA/5CF80D2F" Ref="D8"  Part="1" 
+F 0 "D8" V 4104 2929 50  0000 L CNN
+F 1 "D" V 4195 2929 50  0000 L CNN
+F 2 "Diode_SMD:D_0603_1608Metric" H 4150 2850 50  0001 C CNN
+F 3 "~" H 4150 2850 50  0001 C CNN
+	1    4150 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5V #PWR0101
+U 1 1 5CF814B1
+P 4150 2100
+AR Path="/5CF8395A/5CF814B1" Ref="#PWR0101"  Part="1" 
+AR Path="/5CF83BCA/5CF814B1" Ref="#PWR0103"  Part="1" 
+F 0 "#PWR0103" H 4150 1950 50  0001 C CNN
+F 1 "+5V" H 4165 2273 50  0000 C CNN
+F 2 "" H 4150 2100 50  0001 C CNN
+F 3 "" H 4150 2100 50  0001 C CNN
+	1    4150 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5CF81891
+P 4150 3100
+AR Path="/5CF8395A/5CF81891" Ref="#PWR0102"  Part="1" 
+AR Path="/5CF83BCA/5CF81891" Ref="#PWR0104"  Part="1" 
+F 0 "#PWR0104" H 4150 2850 50  0001 C CNN
+F 1 "GND" H 4155 2927 50  0000 C CNN
+F 2 "" H 4150 3100 50  0001 C CNN
+F 3 "" H 4150 3100 50  0001 C CNN
+	1    4150 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 2200 4150 2100
+Wire Wire Line
+	4150 2700 4150 2600
+Wire Wire Line
+	4150 3100 4150 3000
+$Comp
+L Device:R R5
+U 1 1 5CF81F47
+P 3950 2600
+AR Path="/5CF8395A/5CF81F47" Ref="R5"  Part="1" 
+AR Path="/5CF83BCA/5CF81F47" Ref="R6"  Part="1" 
+F 0 "R6" V 3743 2600 50  0000 C CNN
+F 1 "R" V 3834 2600 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 3880 2600 50  0001 C CNN
+F 3 "~" H 3950 2600 50  0001 C CNN
+	1    3950 2600
+	0    1    1    0   
+$EndComp
+Text HLabel 3650 2600 0    50   Input ~ 0
+IN
+Text HLabel 4450 2600 2    50   Input ~ 0
+OUT
+Wire Wire Line
+	3650 2600 3800 2600
+Wire Wire Line
+	4100 2600 4150 2600
+Connection ~ 4150 2600
+Wire Wire Line
+	4150 2600 4150 2500
+Wire Wire Line
+	4450 2600 4150 2600
+$EndSCHEMATC
