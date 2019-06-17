@@ -152,8 +152,6 @@ NoConn ~ 4900 3050
 NoConn ~ 4900 3150
 NoConn ~ 4900 4350
 NoConn ~ 4900 4250
-NoConn ~ 4900 4150
-NoConn ~ 4900 4050
 NoConn ~ 4900 3950
 NoConn ~ 4900 3850
 NoConn ~ 4900 3750
@@ -202,10 +200,10 @@ RELAY4
 Wire Wire Line
 	5950 3700 6050 3700
 $Comp
-L Connector:Screw_Terminal_01x02 J6
+L Connector:Screw_Terminal_01x02 J2
 U 1 1 5CF7D51B
 P 1150 4550
-F 0 "J6" H 1068 4225 50  0000 C CNN
+F 0 "J2" H 1068 4225 50  0000 C CNN
 F 1 "Screw_Terminal_01x02" H 1068 4316 50  0000 C CNN
 F 2 "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_2-G-5.08_1x02_P5.08mm_Vertical" H 1150 4550 50  0001 C CNN
 F 3 "~" H 1150 4550 50  0001 C CNN
@@ -267,4 +265,61 @@ Wire Wire Line
 	2600 3250 2700 3250
 Wire Wire Line
 	2600 2850 2700 2850
+$Comp
+L Connector_Generic:Conn_01x04 J3
+U 1 1 5D065ED7
+P 6200 4350
+F 0 "J3" H 6280 4342 50  0000 L CNN
+F 1 "Conn_01x04" H 6280 4251 50  0000 L CNN
+F 2 "Connector_PinSocket_1.27mm:PinSocket_1x04_P1.27mm_Vertical" H 6200 4350 50  0001 C CNN
+F 3 "~" H 6200 4350 50  0001 C CNN
+	1    6200 4350
+	1    0    0    -1  
+$EndComp
+Text GLabel 5050 4050 2    50   Input ~ 0
+SDA
+Text GLabel 5050 4150 2    50   Input ~ 0
+SCL
+Wire Wire Line
+	4900 4150 5050 4150
+Wire Wire Line
+	4900 4050 5050 4050
+$Comp
+L power:GND #PWR0101
+U 1 1 5D08BB6A
+P 5550 4600
+F 0 "#PWR0101" H 5550 4350 50  0001 C CNN
+F 1 "GND" H 5555 4427 50  0000 C CNN
+F 2 "" H 5550 4600 50  0001 C CNN
+F 3 "" H 5550 4600 50  0001 C CNN
+	1    5550 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 5D08CBE9
+P 5550 4300
+F 0 "#PWR0102" H 5550 4150 50  0001 C CNN
+F 1 "+5V" H 5565 4473 50  0000 C CNN
+F 2 "" H 5550 4300 50  0001 C CNN
+F 3 "" H 5550 4300 50  0001 C CNN
+	1    5550 4300
+	1    0    0    -1  
+$EndComp
+Text GLabel 5900 4250 0    50   Input ~ 0
+SDA
+Text GLabel 5900 4350 0    50   Input ~ 0
+SCL
+Wire Wire Line
+	5900 4250 6000 4250
+Wire Wire Line
+	5900 4350 6000 4350
+Wire Wire Line
+	5550 4300 5550 4450
+Wire Wire Line
+	5550 4450 6000 4450
+Wire Wire Line
+	5550 4600 5550 4550
+Wire Wire Line
+	5550 4550 6000 4550
 $EndSCHEMATC
