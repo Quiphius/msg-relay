@@ -18,7 +18,7 @@ bool ledOn;
 bool triggered = false;
 unsigned short triggerReset = 0;
 
-unsigned short relayTimes[] = { 10, 15, 40, 0 };
+unsigned short relayTimes[] = { 5, 35, 0, 0 };
 bool relayActive[] = { false, false, false, false };
 unsigned long relayLast[] = { 0, 0, 0, 0 };
 unsigned long triggedTime, now;
@@ -168,5 +168,5 @@ void loop() {
     }
   }
   handleSerial();
-  delay(100);
+  delay(10);
 }
